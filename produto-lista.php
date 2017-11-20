@@ -7,7 +7,7 @@ $produtos = listaProdutos($conexao);
 
 if(array_key_exists("removido", $_GET) && $_GET['removido']==="true") {
 ?>
-  <p class="text-success">Produto <?=$id?> removido com sucesso</p>
+  <p class="text-success">Produto removido com sucesso</p>
 <?php
 }
 ?>
