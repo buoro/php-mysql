@@ -13,3 +13,8 @@ function listaProdutos($conexao) {
   }
   return $produtos;
 }
+
+fucntion removeProduto($conexao, $id) {
+  $query = "DELETE FROM produtos WHERE id={$id}";
+  return mysqli_query($conexao, $query);
+}
