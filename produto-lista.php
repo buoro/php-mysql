@@ -18,7 +18,7 @@ foreach($produtos AS $produto) :
   <tr>
     <td><?= $produto['nome'];?></td>
     <td><?= $produto['preco'];?></td>
-    <td><?= $produto['descricao'];?></td>
+    <td><?= substr($produto['descricao'], 0, 40);?></td>
     <td><a href="remove-produto.php?id=<?=$produto['id'];?>" class="btn btn-danger">remover</td>
   </tr>
 <?php
