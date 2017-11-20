@@ -8,8 +8,12 @@
           <td><input type="text" name="nome" class="form-control"></td>
         </tr>
         <tr>
-          <td>Preço</td>
+          <td>Preço:</td>
           <td><input type="number" name="preco" class="form-control"></td>
+        </tr>
+        <tr>
+          <td>Descricao:</td>
+          <td><textarea name="descricao" class="form-control"></textarea></td>
         </tr>
         <tr>
           <td><input type="submit" value="cadastrar" class="btn btn-primary"></td>
