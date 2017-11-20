@@ -1,24 +1,20 @@
-<?php include('cabecalho.php'); ?>
-<?php include('conecta.php'); ?>
 <?php
-    $nome = $_GET['nome'];
-    $preco = $_GET['preco'];
+include('cabecalho.php');
+include('conecta.php');
+include('banco-produto.php');
 
-    function adicionaProduto($conexao, $nome, $preco) {
-      $query = "INSERT INTO produtos (nome, preco) VALUES ('{$nome}', {$preco})";
-      $resultadoDaInsercao = mysqli_query($conexao, $query);
-      return $resultadoDaInsercao;
-    }
+$nome = $_GET['nome'];
+$preco = $_GET['preco'];
 
-    if(adicionaProduto($conexao, $nome, $preco)) {
+if(adicionaProduto($conexao, $nome, $preco)) {
 ?>
-      <p class="text-success">Produto <?=$nome;?>, <?=$preco?> adicionado com sucesso.</p>
+  <p class="text-success">Produto <?=$nome;?>, <?=$preco?> adicionado com sucesso.</p>
 <?php
-    } else {
-      $msg = mysqli_error($conexao);
+} else {
+  $msg = mysqli_error($conexao);
 ?>
-      <p class="text-danger">Produto <?=$nome;?> não foi adicionado. Erro: <?=$msg?></p>
+  <p class="text-danger">Produto <?=$nome;?> não foi adicionado. Erro: <?=$msg?></p>
 <?php
-    }
+}
 ?>
 <?php include('rodape.php'); ?>
