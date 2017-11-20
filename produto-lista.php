@@ -1,9 +1,13 @@
 <?php include("cabecalho.php");?>
 <?php include("conecta.php");?>
 <?php
+function listaProdutos($conexao) {
+  $produtos = array();
   $resultado = mysqli_query($conexao, "select * from produtos");
   while ($produto = mysqli_fetch_assoc($resultado)) {
-    echo $produto['nome']."<br />";
+    array_push($produtos, $produto);
   }
+  return $produtos;
+}
 ?>
 <?php include("rodape.php");?>
