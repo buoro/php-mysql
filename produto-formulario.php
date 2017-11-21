@@ -22,9 +22,14 @@ $categorias = listaCategorias($conexao);
         <tr>
           <td>Categoria:</td>
           <td>
-          <?php foreach ($categorias AS $categoria) : ?>
-            <input type="radio" name="categoria_id" value="<?=$categoria['id'];?>"><?=$categoria['nome'];?></br>
-          <?php endforeach?>
+            <select class="form-control" name="categoria_id">
+              <?php foreach ($categorias AS $categoria) : ?>
+                <option name="" value="<?=$categoria['id'];?>">
+                  <?=$categoria['nome'];?>
+                </option>
+              <?php endforeach?>
+
+            </select>
           </td>
         </tr>
         <tr>
