@@ -5,6 +5,12 @@ function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usad
   return $resultadoDaInsercao;
 }
 
+function buscaProduto($conexao, $id) {
+  $query = "SELECT * FROM produtos WHERE id={$id}";
+  $resultado = mysqli_query($conexao, $query);
+  return mysqli_fetch_assoc($resultado);
+}
+
 function listaProdutos($conexao) {
   $produtos = array();
   $resultado = mysqli_query($conexao, "select p.*, c.nome as categoria_nome from produtos p join categorias c on p.categoria_id=c.id");
