@@ -5,14 +5,14 @@ function insereProduto($conexao, $nome, $preco, $descricao, $categoria_id, $usad
   return $resultadoDaInsercao;
 }
 function alteraProduto($conexao, $id, $nome, $preco, $descricao, $categoria_id, $usado) {
-  $query = "UPTADE
+  $query = "UPDATE
               produtos
             SET
-              nome'{$nome}',
+              nome='{$nome}',
               preco={$preco},
               descricao='{$descricao}',
               categoria_id={$categoria_id},
-              usado={$usado}
+              usado='{$usado}'
             WHERE id={$id}";
   return mysqli_query($conexao, $query);
 }
